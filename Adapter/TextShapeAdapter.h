@@ -1,0 +1,25 @@
+#ifndef CLASS_ADAPTER_TEXTSHAPEADAPTER_H
+#define CLASS_ADAPTER_TEXTSHAPEADAPTER_H
+
+#include <iostream>
+#include <string>
+#include "Text.h"
+#include "Shape.h"
+
+class TextShapeAdapter : public Shape, private Text{
+public:
+	TextShapeAdapter(const Text &adaptee);
+	TextShapeAdapter(string t, int fontSize);
+	virtual ~TextShapeAdapter();
+
+	//Overriding our methods.
+	virtual void draw() override;
+	virtual void resize(float newSize) override;
+
+private:
+
+};
+
+
+
+#endif 

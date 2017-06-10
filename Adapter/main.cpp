@@ -5,6 +5,7 @@
 #include "Sprite.h"
 #include "Tile.h"
 #include "Text.h"
+#include "TextShapeAdapter.h"
 using namespace std;
 
 int main() {
@@ -23,10 +24,12 @@ int main() {
 	drawingElements.push_back(floor);
 	drawingElements.push_back(wall);
 	
-	//Using this after...Think about this.
+	
 	Text hitPoints("HP: ", 12);
-		//TODO add a text reporting level wifh font size 14
-		//add text to drawingElements
+	Shape *textAdapter = new TextShapeAdapter(hitPoints); 
+	drawingElements.push_back(textAdapter);
+	Shape *textAdapter2 = new TextShapeAdapter("Level: ", 14); 
+	drawingElements.push_back(textAdapter2); 
 	
 	//Drawing our charactes and our game maps (floor, wall).
 	for(auto itr = begin(drawingElements); itr != end(drawingElements); itr++){
