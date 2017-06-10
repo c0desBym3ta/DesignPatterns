@@ -30,12 +30,14 @@ int main() {
 	drawingElements.push_back(textAdapter);
 	Shape *textAdapter2 = new TextShapeAdapter("Level: ", 14); 
 	drawingElements.push_back(textAdapter2); 
-	
+		
 	//Drawing our charactes and our game maps (floor, wall).
 	for(auto itr = begin(drawingElements); itr != end(drawingElements); itr++){
 		(*itr)->resize(1.2);
 		(*itr)->draw();
 	}
+
+	cerr << "Remaining to create our object adapter." << endl;
 
 	return 0;
 }

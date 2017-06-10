@@ -6,6 +6,8 @@
 #include "Text.h"
 #include "Shape.h"
 
+//This will be our adapter.
+
 class TextShapeAdapter : public Shape, private Text{
 public:
 	TextShapeAdapter(const Text &adaptee);
