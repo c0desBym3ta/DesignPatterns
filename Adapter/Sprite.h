@@ -3,9 +3,10 @@
 
 #include <iostream>
 #include <string>
+#include "Shape.h"
 using namespace std;
 
-class Sprite {
+class Sprite : public Shape {
 public:
 	//Againg our explicit constructor.
 	explicit Sprite(string fileN, int w = 100, int h = 200);
