@@ -11,22 +11,22 @@ using namespace std;
 //This will be our adapter.
 //Making soe changes and save our previous class adapter source code to anothes txt file.
 //We are going to implement our object adapter.
-
-class TextShapeAdapter : public Shape {
+class TextShapeAdapter : public Shape, private Text{
 public:
-    TextShapeAdapter(Text* adText) :
-            adaptee(adText) {}
-    TextShapeAdapter(std::string t, int fontSize) {
-        adaptee = new Text(t, fontSize);
-    }
-    virtual ~TextShapeAdapter() {}
+        //Our constructors/deconstructors.
+	TextShapeAdapter(Text *adText) : adaptee(adText) {}
+	TextShapeAdapter(string t, int fontSize) {adaptee = new Text(t, fontSize);}
+	virtual ~TextShapeAdapter();
 
-    virtual void draw() override;
-    virtual void resize(float newSize) override;
+        //Overriding our methods.
+        virtual void draw() override;
+        virtual void resize(float newSize) override;
 
 private:
-    Text* adaptee;
+	Text *adaptee;
 };
 
 
-#endif 
+
+#endif
+

@@ -23,14 +23,13 @@ int main() {
 	drawingElements.push_back(monster);
 	drawingElements.push_back(floor);
 	drawingElements.push_back(wall);
-	
-	
-	Text hitPoints("HP: ", 12);
-	Shape *textAdapter = new TextShapeAdapter(hitPoints); 
-	drawingElements.push_back(textAdapter);
-	Shape *textAdapter2 = new TextShapeAdapter("Level: ", 14); 
-	drawingElements.push_back(textAdapter2); 
 		
+	Text hitPoints("HP: ", 12);
+    	Shape* textAdapter = new TextShapeAdapter(&hitPoints);
+    	drawingElements.push_back(textAdapter);
+    	Shape* textAdapter2 = new TextShapeAdapter("Level: ", 14);
+    	drawingElements.push_back(textAdapter2);
+	
 	//Drawing our charactes and our game maps (floor, wall).
 	for(auto itr = begin(drawingElements); itr != end(drawingElements); itr++){
 		(*itr)->resize(1.2);
